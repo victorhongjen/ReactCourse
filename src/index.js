@@ -13,14 +13,16 @@ function BookList() {
 }
 
 const Book = () => {
+  let title = 'The Bicycle Wheel' //create variable and pass in as JS
+  let author = 'Jobst Brandt'
   return (
     <article className="book">
       <img
         src="https://m.media-amazon.com/images/I/71CFMKWRYEL._AC_UL320_.gif"
-        alt="The Bicycle Wheel Book"
+        alt="The Bicycle Wheel Book" 
       />
-      <h1>Title</h1>
-      <p>AUTHOR NAME</p>
+      <h1>{title}</h1> 
+      <h4>{author.toUpperCase()}</h4>
       <p>
         This is a paragraph of the description of the book.<br></br>
         Bla... Bla... Bla...
