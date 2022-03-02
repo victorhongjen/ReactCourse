@@ -36,11 +36,21 @@ const Booklist = () => {
 const Book = (props) => { 
   console.log(props)
   const {image, title, author} = props //can decompose here or can decompose directly in parameter
+  // to add event: (attribute, eventHandler)
+  // onClick, onMounseOver
+  const clickHandler = () => {
+    alert('igotclicked')
+  }
+  const moreComplexExmaple = (author) => {
+    console.log(author)
+  } // if want to passin argument, then need to set up inline function to prevent it from firing once loaded
   return(
     <div className='book'>
-      <img src={image} />
+      <img onClick={()=> console.log(title)} src={image} /> // add event in line
       <h1>{title}</h1>
       <h3>{author}</h3>
+      <button type= "button" onClick={clickHandler}>button</button>
+      <button type='button' onClick={() => moreComplexExmaple(author) }>moreComplexExmaple</button> 
     </div>
   )
 }
