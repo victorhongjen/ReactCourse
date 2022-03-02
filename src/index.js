@@ -21,11 +21,12 @@ const Booklist = () => {
   return(
     <div className='booklist'>{books.map((book) => {
       return (
-        <Book 
-        // image = {img} //image comes from Book. img comes from books.map() each book.
-        // title = {title}
-        // author = {author} 
-        key={book.id} book={book} //first book is prop, {book} is what is the book being passed in.
+        <Book
+          // image = {img} //image comes from Book. img comes from books.map() each book.
+          // title = {title}
+          // author = {author}
+          // first book is prop, {book} is what is the book being passed in.
+          key={book.id} {...book} //book is being destructured here with the spread operator.
         />
       )
     })}</div>
@@ -34,7 +35,7 @@ const Booklist = () => {
 
 const Book = (props) => { 
   console.log(props)
-  const {image, title, author} = props.book
+  const {image, title, author} = props //can decompose here or can decompose directly in parameter
   return(
     <div className='book'>
       <img src={image} />
